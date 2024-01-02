@@ -1,3 +1,5 @@
+import 'package:trinity_lecture_app/domain/main_page/entities/landing_model.dart';
+
 class Constants {
   static String apiKey = ''; // use your API key
   static String dummyImg =
@@ -13,5 +15,26 @@ class Constants {
     'fashion',
     'home',
     'business',
+  ];
+
+  static List<Landing> menuList = [
+    Landing(title: "Dummy UI", desc: "Introducing basic flutter widget UI"),
+    Landing(
+        title: "Counter Example (State Management)",
+        desc: "Introducing of state management using flutter_bloc. Level: 1"),
+    Landing(
+        title: "Input Validation Example (State Management)",
+        desc:
+            "Flutter state management using flutter_bloc to handle validation in text field. Level: 2"),
+    Landing(
+        title: "Calculator Example (State Management)",
+        desc:
+            "Flutter state management using flutter_bloc to calculate simple syntax. Level: 3"),
+    Landing(
+        title: "News App", desc: "API calling using free source from NYTimes"),
+    Landing(
+        title: "To Do App",
+        desc:
+            "Create a to do list that saved in local storage using hydrated_bloc. Level: 4"),
   ];
 }

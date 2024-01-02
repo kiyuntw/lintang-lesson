@@ -16,31 +16,32 @@ class DummyContainerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: UIHelper.padding(vertical: 20, horizontal: 10),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: ColorConstant.grey,
-            width: 0.5,
-          ),
-          borderRadius: UIHelper.borderRadiusCircular(all: 10),
+      padding: UIHelper.padding(vertical: 20, horizontal: 10),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: ColorConstant.grey,
+          width: 0.5,
         ),
-        child: Expanded(
-          child: Column(
-            children: [
-              ClipRRect(
-                borderRadius: UIHelper.borderRadiusCircular(all: 10),
-                child: Image.network(imgSrc,
-                    width: UIHelper.setSp(70),
-                    height: UIHelper.setSp(70),
-                    fit: BoxFit.cover),
-              ),
-              UIHelper.verticalSpace(10),
-              Text(
-                title,
-                style: context.textTheme.headlineSmall,
-              ),
-            ],
-          ),
-        ));
+        borderRadius: UIHelper.borderRadiusCircular(all: 10),
+      ),
+      child: Expanded(
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: UIHelper.borderRadiusCircular(all: 10),
+              child: Image.network(imgSrc,
+                  width: UIHelper.setSp(70),
+                  height: UIHelper.setSp(70),
+                  fit: BoxFit.cover),
+            ),
+            UIHelper.verticalSpace(10),
+            Text(
+              title,
+              style: context.textTheme.headlineSmall,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
