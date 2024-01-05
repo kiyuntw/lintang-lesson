@@ -2,8 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:trinity_lecture_app/core/commons/constants.dart';
 import 'package:trinity_lecture_app/core/routes/app_router.gr.dart';
-import 'package:trinity_lecture_app/domain/main_page/entities/landing_model.dart';
-import 'package:trinity_lecture_app/presentation/pages/dummy_ui_first_page.dart';
+import 'package:trinity_lecture_app/presentation/pages/dummy_ui/dummy_ui_first_page.dart';
 import 'package:trinity_lecture_app/presentation/widgets/molecules/action_text.dart';
 import 'package:trinity_lecture_app/presentation/widgets/molecules/platform_app_bar.dart';
 import 'package:trinity_lecture_app/presentation/widgets/organisms/ui_helper.dart';
@@ -31,7 +30,17 @@ class MainPage extends StatelessWidget {
               title: menuList[index].title,
               desc: menuList[index].desc,
               onTap: () {
-                AutoRouter.of(context).push(const DummyUIFirstRoute());
+                switch (menuList[index].id) {
+                  case 'dummy':
+                    AutoRouter.of(context).push(const DummyUIFirstRoute());
+                    break;
+                  case 'calculator':
+                    AutoRouter.of(context).push(const CalculatorRoute());
+                  case 'news':
+                    AutoRouter.of(context).push(const NewsRoute());
+                  default:
+                    AutoRouter.of(context).push(const DummyUIFirstRoute());
+                }
               },
             ),
           ),

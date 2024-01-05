@@ -1,4 +1,5 @@
 import 'package:trinity_lecture_app/domain/main_page/entities/landing_model.dart';
+import 'package:trinity_lecture_app/domain/news_page/entities/news_model.dart';
 
 class Constants {
   static String apiKey = ''; // use your API key
@@ -18,23 +19,47 @@ class Constants {
   ];
 
   static List<Landing> menuList = [
-    Landing(title: "Dummy UI", desc: "Introducing basic flutter widget UI"),
+    Landing(
+        title: "Dummy UI",
+        desc: "Introducing basic flutter widget UI",
+        id: "dummy"),
     Landing(
         title: "Counter Example (State Management)",
-        desc: "Introducing of state management using flutter_bloc. Level: 1"),
+        desc: "Introducing of state management using flutter_bloc. Level: 1",
+        id: "counter"),
     Landing(
         title: "Input Validation Example (State Management)",
         desc:
-            "Flutter state management using flutter_bloc to handle validation in text field. Level: 2"),
+            "Flutter state management using flutter_bloc to handle validation in text field. Level: 2",
+        id: "input"),
     Landing(
         title: "Calculator Example (State Management)",
         desc:
-            "Flutter state management using flutter_bloc to calculate simple syntax. Level: 3"),
+            "Flutter state management using flutter_bloc to calculate simple syntax. Level: 3",
+        id: "calculator"),
     Landing(
-        title: "News App", desc: "API calling using free source from NYTimes"),
+        title: "News App",
+        desc: "API calling using free source from NYTimes",
+        id: "news"),
     Landing(
         title: "To Do App",
         desc:
-            "Create a to do list that saved in local storage using hydrated_bloc. Level: 4"),
+            "Create a to do list that saved in local storage using hydrated_bloc. Level: 4",
+        id: "todo"),
+  ];
+
+  static List<News> newsList = [
+    News(
+      title: 'Things I Thought Made Sense Just Don\'t Anymore',
+      desc: 'By Mira Jacob \u2022 2023-12-28',
+    ),
+    News(
+      title: 'Simpleton? Genius? Who Was Tom Smothers?',
+      desc: 'By Nell Scovell \u2022 2023-12-28',
+    ),
+    News(
+      title: 'I Promised My Sister I Would Write About How She Chose To Die',
+      desc: 'By Steven Petrow \u2022 2023-12-28',
+    ),
   ];
 }

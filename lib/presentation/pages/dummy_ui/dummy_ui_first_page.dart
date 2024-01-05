@@ -5,6 +5,7 @@ import 'package:trinity_lecture_app/core/commons/constants.dart';
 import 'package:trinity_lecture_app/core/routes/app_router.gr.dart';
 import 'package:trinity_lecture_app/presentation/widgets/atoms/text_theme_extension.dart';
 import 'package:trinity_lecture_app/presentation/widgets/molecules/action_text.dart';
+import 'package:trinity_lecture_app/presentation/widgets/molecules/chip.dart';
 import 'package:trinity_lecture_app/presentation/widgets/molecules/platform_app_bar.dart';
 import 'package:trinity_lecture_app/presentation/widgets/molecules/required_text.dart';
 import 'package:trinity_lecture_app/presentation/widgets/organisms/dummy_container_card.dart';
@@ -121,7 +122,11 @@ class DummyUIFirstPage extends StatelessWidget {
                   DummyContainerCard(
                       imgSrc: Constants.dummyImg, title: '3rd Container'),
                 ],
-              )
+              ),
+              // ChipCustom(
+              //   onTap: () {},
+              //   title: 'asd',
+              // )
             ],
           ),
         ),
