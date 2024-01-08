@@ -38,6 +38,10 @@ class MainPage extends StatelessWidget {
                     AutoRouter.of(context).push(const CalculatorRoute());
                   case 'news':
                     AutoRouter.of(context).push(const NewsRoute());
+                  case 'counter':
+                    AutoRouter.of(context).push(const CounterRoute());
+                  case 'input':
+                    AutoRouter.of(context).push(const InputValidationRoute());
                   default:
                     AutoRouter.of(context).push(const DummyUIFirstRoute());
                 }

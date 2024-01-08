@@ -61,5 +61,9 @@ class Constants {
       title: 'I Promised My Sister I Would Write About How She Chose To Die',
       desc: 'By Steven Petrow \u2022 2023-12-28',
     ),
+    News(
+      title: 'Tom Smothers, Comic Half of the Smothers Brothers, Dies at 86',
+      desc: 'By William Grimes \u2022 2023-12-27',
+    ),
   ];
 }

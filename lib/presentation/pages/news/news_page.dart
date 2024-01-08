@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:trinity_lecture_app/core/commons/colors_const.dart';
 import 'package:trinity_lecture_app/core/commons/constants.dart';
+import 'package:trinity_lecture_app/core/routes/app_router.gr.dart';
+import 'package:trinity_lecture_app/presentation/widgets/atoms/text_theme_extension.dart';
 import 'package:trinity_lecture_app/presentation/widgets/molecules/platform_app_bar.dart';
 import 'package:trinity_lecture_app/presentation/widgets/organisms/news_card.dart';
 import 'package:trinity_lecture_app/presentation/widgets/organisms/ui_helper.dart';
@@ -19,51 +21,82 @@ class NewsPage extends StatelessWidget {
       appBar: const PlatformAppBar(title: Text('News Page')),
       body: Padding(
         padding: UIHelper.padding(horizontal: 20, vertical: 10),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Text('Top Stories'),
-              Text('Top stories from all time'),
-              Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Top Stories',
+              style: context.textTheme.headlineMedium,
+            ),
+            Text(
+              'Top stories from all time',
+              style: context.textTheme.headlineSmall
+                  ?.copyWith(color: ColorConstant.lightGrey),
+            ),
+            UIHelper.verticalSpace(sectionPadding),
+            InkWell(
+              onTap: () {
+                AutoRouter.of(context).push(const TopStoriesFilterRoute());
+              },
+              child: Container(
                 padding: UIHelper.padding(vertical: 10, horizontal: 10),
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: ColorConstant.lightBlue,
+                    color: ColorConstant.primary,
                     width: 0.5,
                   ),
                   borderRadius: UIHelper.borderRadiusCircular(all: 10),
                 ),
-                child: const Row(
+                child: Row(
                   children: [
-                    Text(
-                      'Go To Categories Section',
-                      style: TextStyle(fontSize: 12),
-                    )
+                    Text('Go To Categories Section',
+                        style: context.textTheme.labelSmall
+                            ?.copyWith(color: ColorConstant.primary))
                   ],
                 ),
               ),
-              const Row(
-                children: [
-                  Text('Most Popular Articles'),
-                  Text('See All'),
-                ],
-              ),
-              Text('Top articles from last week'),
-              Expanded(
-                child: ListView.builder(
-                  itemBuilder: (context, index) => Padding(
-                    padding: UIHelper.padding(vertical: 10, horizontal: 15),
-                    child: NewsCard(
-                      imgSrc: Constants.dummyImg,
-                      title: Constants.newsList[index].title,
-                      desc: Constants.newsList[index].desc,
-                    ),
+            ),
+            UIHelper.verticalSpace(sectionPadding),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Most Popular Articles',
+                    style: context.textTheme.headlineMedium,
                   ),
-                  itemCount: 3,
                 ),
-              )
-            ],
-          ),
+                InkWell(
+                  onTap: () {
+                    AutoRouter.of(context)
+                        .push(const MostPopularArticlesRoute());
+                  },
+                  child: Text(
+                    'See All',
+                    style: context.textTheme.headlineMedium
+                        ?.copyWith(color: ColorConstant.primary),
+                  ),
+                )
+              ],
+            ),
+            Text(
+              'Top articles from last week',
+              style: context.textTheme.headlineSmall
+                  ?.copyWith(color: ColorConstant.lightGrey),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) => Padding(
+                  padding: UIHelper.padding(vertical: 10, horizontal: 0),
+                  child: NewsCard(
+                    imgSrc: Constants.dummyImg,
+                    title: Constants.newsList[index].title,
+                    desc: Constants.newsList[index].desc,
+                  ),
+                ),
+                itemCount: 3,
+              ),
+            )
+          ],
         ),
       ),
     );

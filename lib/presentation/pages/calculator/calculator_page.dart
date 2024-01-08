@@ -117,23 +117,28 @@ class CalculatorPage extends StatelessWidget {
                 style: context.textTheme.headlineSmall
                     ?.copyWith(color: ColorConstant.green)),
             UIHelper.verticalSpace(sectionPadding),
-            // ListView.builder(
-            //   itemBuilder: (context, index) => Padding(
-            //     padding: UIHelper.padding(vertical: 10, horizontal: 15),
-            //     child: Row(
-            //       children: [
-            //         Expanded(
-            //           child: const Text('1 ^ 2'),
-            //         ),
-            //         TextButton(
-            //           onPressed: () {},
-            //           child: const Text('Re-apply'),
-            //         )
-            //       ],
-            //     ),
-            //   ),
-            //   itemCount: 1,
-            // ),
+            Expanded(
+              child: ListView.separated(
+                itemBuilder: (context, index) => Padding(
+                  padding: UIHelper.padding(vertical: 0, horizontal: 0),
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        child: Text('1 ^ 2'),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text('Re-apply'),
+                      )
+                    ],
+                  ),
+                ),
+                itemCount: 3,
+                separatorBuilder: (BuildContext context, int index) {
+                  return Divider();
+                },
+              ),
+            ),
             const Expanded(
               child: SizedBox(),
             ),
