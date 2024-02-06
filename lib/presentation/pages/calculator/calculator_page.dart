@@ -139,17 +139,14 @@ class CalculatorPage extends StatelessWidget {
                 },
               ),
             ),
-            const Expanded(
-              child: SizedBox(),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: const Text('CALCULATE'),
-              ),
-            ),
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        margin: UIHelper.padding(horizontal: 10, vertical: 20),
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text('CALCULATE'),
         ),
       ),
     );
